@@ -12,21 +12,19 @@ def dummy_fn(x):
 
     return gradient 
 
-def sim_fn(nsteps=1,alpha=0.5):
-    values=np.linspace(-1,1,nsteps)
-
+def sim_fn(nsteps=1,alpha=0.1):
     weight_init=2
     weight_change=[]
 
-    for val in values:
-        weight_init=weight_init-alpha*(dummy_fn(val))
+    for _ in range(nsteps):
+        weight_init=weight_init-alpha*(dummy_fn(weight_init))
         weight_change.append(weight_init)
 
     return weight_change
 
 def plot_vs_nsteps():
 
-    nsteps=[10000,20000,30000,50000]
+    nsteps=[50,30,20,10]
     
     for nstep in nsteps:
         weights= sim_fn(nsteps=nstep)
@@ -37,10 +35,10 @@ def plot_vs_nsteps():
 
 def plot_vs_alpha():
 
-    alpha_vals=[0.005,0.5,1.0,1.5,2.0]
+    alpha_vals=[0.005,0.05,0.1,0.5,0.9]
 
     for alpha in alpha_vals:
-        weights = sim_fn(nsteps=100000,alpha=alpha)
+        weights = sim_fn(nsteps=50,alpha=alpha)
         plt.plot(weights,label=f'Alpha={alpha}')
         plt.legend()
 
