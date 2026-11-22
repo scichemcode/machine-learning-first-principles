@@ -40,7 +40,7 @@ def plot_vs_alpha():
     alpha_vals=[0.005,0.5,1.0,1.5,2.0]
 
     for alpha in alpha_vals:
-        weights,nsteps = sim_fn(nsteps=100000,alpha=alpha)
+        weights = sim_fn(nsteps=100000,alpha=alpha)
         plt.plot(weights,label=f'Alpha={alpha}')
         plt.legend()
 
