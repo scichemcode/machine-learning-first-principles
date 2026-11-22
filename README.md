@@ -8,6 +8,7 @@ Small, standalone scripts that build machine learning basics with NumPy.
 .
 ├── neurons/
 │   ├── single_neuron.py              # one sigmoid neuron: network, loss and training animation
+│   ├── neuron_plots.py               # plots and animation used by single_neuron.py
 │   └── two_neurons.py                # two hidden neurons feeding one output neuron
 └── gradient_descent/
     ├── gradient_descent.py           # weight updates using the gradient of x² + 3x + 6
