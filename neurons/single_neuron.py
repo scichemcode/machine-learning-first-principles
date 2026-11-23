@@ -32,7 +32,7 @@ weights=np.array([0.11,0.12,0.13,0.14])  # large weights flatten the sigmoid and
 bias=0
 
 target=0    # what the output should become
-nsteps=50
+nsteps=100
 alpha=0.05  # learning rate
 
 assert target in (0,1), "sigmoid loss needs a target of 0 or 1"
